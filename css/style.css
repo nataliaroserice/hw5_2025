@@ -185,7 +185,7 @@ solid 2px border using #45ADAD,
         display: flex;
         flex-direction: column;
         break-inside: avoid;
-        width: 100%;
+        box-sizing: border-box;
     }
 
     /* Step 20: No part of the gallery should be visible. */
