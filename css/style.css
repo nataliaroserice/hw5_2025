@@ -156,6 +156,7 @@ solid 2px border using #45ADAD,
     /* Step 18. Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height.  */
     .pricing {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-end;
         justify-content: center;
@@ -167,6 +168,7 @@ solid 2px border using #45ADAD,
         border: 2px solid #45ADDD;
         flex-basis: 325px;
         display: flex;
+        flex-direction: column;
     }
 
     .gallery {
