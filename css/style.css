@@ -64,13 +64,14 @@ solid 2px border using #45ADAD,
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     padding: 0 0 25px 0;
+
 }
 
 /* Step 8: Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically.*/
 .pricing {
     display: flex;
     flex-direction: column;
-    align-items: center center;
+    align-items: center;
     max-width: 75%;
     margin: 0 auto;
 }
@@ -144,23 +145,37 @@ solid 2px border using #45ADAD,
     /* Step 15. Change the font on your body to Arial with a backup value of  Helvetica */
     body {
         font-family: Arial, Helvetica, sans-serif;
+
         /* Step 16. Remove background image*/
         background-image: none;
     }
+    
+
+     
     /* Step 17. Edit the nav/nav_links elements so that they are spaced evenly according to the example image. */
-    nav, .nav_links {
+    nav {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
     }
+    
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        gap: 80%;
+        justify-content: center;
+    }
+    
     /* Step 18. Edit the pricing class so that the elements align along the bottom.  As long as it aligns along the bottom we don't care if the cards aren't the same height.  */
     .pricing {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: flex-end;
         justify-content: center;
     }
+    
 
     /* Step 19. The card elements should have a solid border 2px of #45ADDD and use flex-basis of 325px.  */
 
@@ -169,14 +184,18 @@ solid 2px border using #45ADAD,
         flex-basis: 325px;
         display: flex;
         flex-direction: column;
+        break-inside: avoid;
+        width: 100%;
     }
 
-    .gallery {
+    /* Step 20: No part of the gallery should be visible. */
+
+    .gallery, #gallery {
         display: none;
     }
 
-    /* Step 21. Add a thumbs up entity as shown in the cards */
-    .card li::before {
-        content: "👍 ";
-    }
-}
+    /* Step 21: Without using list-style-type add the thumbs up entity as shown in the cards. */
+.card li:nth-child(even):after {
+    content: "\01F44D";
+  }
+  }
